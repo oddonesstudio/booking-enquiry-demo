@@ -1,9 +1,11 @@
 import type { PropsWithChildren } from "react";
 import { tv } from "tailwind-variants";
+import { Container } from "../Container";
 
 interface SectionProps extends PropsWithChildren {
   anchorId?: string;
   className?: string;
+  header?: React.ReactNode;
 }
 
 const styles = tv({
@@ -12,11 +14,14 @@ const styles = tv({
   },
 });
 
-export const Section = ({ anchorId, children, className }: SectionProps) => {
+export const Section = ({ anchorId, children, className, header }: SectionProps) => {
   const { base } = styles();
   return (
     <section id={anchorId} className={base({ className })}>
-      {children}
+      <Container className="flex flex-col gap-10">
+        {header}
+        {children}
+      </Container>
     </section>
   );
 };

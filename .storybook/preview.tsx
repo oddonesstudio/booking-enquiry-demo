@@ -1,16 +1,13 @@
 import type { Preview } from "@storybook/react";
 
 import "../app/styles/globals.css";
-import { ThemeProvider } from "../components/ThemeProvider";
 
 const preview: Preview = {
   decorators: [
     (Story) => (
-      <ThemeProvider>
-        <div className="font-sans bg-background text-foreground min-h-screen">
-          <Story />
-        </div>
-      </ThemeProvider>
+      <div className="font-sans bg-background text-foreground min-h-screen">
+        <Story />
+      </div>
     ),
   ],
   parameters: {

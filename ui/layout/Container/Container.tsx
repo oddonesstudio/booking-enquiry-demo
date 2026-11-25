@@ -7,7 +7,7 @@ interface ContainerProps extends PropsWithChildren {
 
 const styles = tv({
   slots: {
-    base: "mx-auto w-full px-left-right max-w-6xl",
+    base: "mx-auto w-full px-left-right max-w-7xl",
   },
 });
 
